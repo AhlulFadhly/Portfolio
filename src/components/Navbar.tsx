@@ -1,9 +1,12 @@
 import { useRef, useEffect } from "react";
-import PropTypes from "prop-types";
 
-const Navbar = ({ navOpen }) => {
-  const lastActiveLink = useRef(null);
-  const activeBox = useRef(null);
+interface NavbarProps {
+  navOpen: boolean;
+}
+
+const Navbar = ({ navOpen }: NavbarProps) => {
+  const lastActiveLink = useRef<HTMLAnchorElement | null>(null);
+  const activeBox = useRef<HTMLDivElement | null>(null);
 
   const initActiveBox = () => {
     if (!lastActiveLink.current || !activeBox.current) return;
@@ -19,11 +22,12 @@ const Navbar = ({ navOpen }) => {
     }, 100);
   };
 
-  // 🔹 ketika klik menu
-  const activeCurrentLink = (event) => {
+  const activeCurrentLink = (
+    event: React.MouseEvent<HTMLAnchorElement>
+  ) => {
     lastActiveLink.current?.classList.remove("active");
-    event.target.classList.add("active");
-    lastActiveLink.current = event.target;
+    event.currentTarget.classList.add("active");
+    lastActiveLink.current = event.currentTarget;
     initActiveBox();
   };
 
@@ -47,8 +51,8 @@ const Navbar = ({ navOpen }) => {
     const sections = document.querySelectorAll("section");
 
     const handleScroll = () => {
-      const middle = window.innerHeight / 3; // garis tengah layar
-      let activeId = null;
+      const middle = window.innerHeight / 3;
+      let activeId: string | null = null;
 
       sections.forEach((section) => {
         const rect = section.getBoundingClientRect();
@@ -58,18 +62,27 @@ const Navbar = ({ navOpen }) => {
       });
 
       if (activeId) {
-        const currentLink = document.querySelector(`a[href="#${activeId}"]`);
-        if (currentLink && currentLink !== lastActiveLink.current) {
+        const currentLink = document.querySelector(
+          `a[href="#${activeId}"]`
+        );
+
+        if (
+          currentLink &&
+          currentLink !== lastActiveLink.current
+        ) {
           lastActiveLink.current?.classList.remove("active");
           currentLink.classList.add("active");
-          lastActiveLink.current = currentLink;
+
+          // Cast agar sesuai tipe
+          lastActiveLink.current = currentLink as HTMLAnchorElement;
+
           initActiveBox();
         }
       }
     };
 
     window.addEventListener("scroll", handleScroll);
-    handleScroll(); // run sekali waktu mount
+    handleScroll();
 
     return () => {
       window.removeEventListener("resize", initActiveBox);
@@ -93,10 +106,6 @@ const Navbar = ({ navOpen }) => {
       <div className="active-box" ref={activeBox}></div>
     </nav>
   );
-};
-
-Navbar.propTypes = {
-  navOpen: PropTypes.bool.isRequired,
 };
 
 export default Navbar;

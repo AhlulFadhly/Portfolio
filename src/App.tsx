@@ -14,30 +14,29 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
 const App = () => {
-  useGSAP (() =>{
-    const elements = gsap.utils.toArray('.reveal-up');
+  useGSAP(() => {
+    const elements = gsap.utils.toArray<HTMLElement>('.reveal-up');
 
     elements.forEach((element) => {
       gsap.to(element, {
         scrollTrigger: {
-          trigger:element,
+          trigger: element,
           start: '-200 bottom',
-          end:'bottom 80%',
-          scrub: true
+          end: 'bottom 80%',
+          scrub: true,
         },
         y: 0,
         opacity: 1,
         duration: 1,
-        ease: 'power2.out'        
-      })
-
+        ease: 'power2.out',
+      });
     });
-
   });
 
   return (
     <ReactLenis root>
-      <Header /><main>
+      <Header />
+      <main>
         <Hero />
         <About />
         <Skill />
@@ -45,9 +44,10 @@ const App = () => {
         <Contact />
       </main>
       <Footer />
-    </ReactLenis>    
+    </ReactLenis>
   );
-}
+};
+
 
 export default App;
 
