@@ -6,15 +6,18 @@ const Navbar = ({ navOpen }) => {
   const activeBox = useRef(null);
 
   const initActiveBox = () => {
-  if (!lastActiveLink.current) return;
-  setTimeout(() => {
-    activeBox.current.style.top = lastActiveLink.current.offsetTop + "px";
-    activeBox.current.style.left = lastActiveLink.current.offsetLeft + "px";
-    activeBox.current.style.width = lastActiveLink.current.offsetWidth + "px";
-    activeBox.current.style.height = lastActiveLink.current.offsetHeight + "px";
-  }, 100); // delay 300ms
-};
+    if (!lastActiveLink.current || !activeBox.current) return;
 
+    setTimeout(() => {
+      if (!activeBox.current || !lastActiveLink.current) return;
+
+      activeBox.current.style.top = lastActiveLink.current.offsetTop + "px";
+      activeBox.current.style.left = lastActiveLink.current.offsetLeft + "px";
+      activeBox.current.style.width = lastActiveLink.current.offsetWidth + "px";
+      activeBox.current.style.height =
+        lastActiveLink.current.offsetHeight + "px";
+    }, 100);
+  };
 
   // 🔹 ketika klik menu
   const activeCurrentLink = (event) => {
@@ -25,7 +28,12 @@ const Navbar = ({ navOpen }) => {
   };
 
   const navItems = [
-    { label: "Home", link: "#home", className: "nav-link active grid", ref: lastActiveLink },
+    {
+      label: "Home",
+      link: "#home",
+      className: "nav-link active grid",
+      ref: lastActiveLink,
+    },
     { label: "About", link: "#about", className: "nav-link grid" },
     { label: "Skills", link: "#skills", className: "nav-link grid" },
     { label: "Project", link: "#work", className: "nav-link grid" },
@@ -72,7 +80,13 @@ const Navbar = ({ navOpen }) => {
   return (
     <nav className={"navbar " + (navOpen ? "active" : "")}>
       {navItems.map(({ label, link, className, ref }) => (
-        <a key={link} href={link} className={className} ref={ref} onClick={activeCurrentLink}>
+        <a
+          key={link}
+          href={link}
+          className={className}
+          ref={ref}
+          onClick={activeCurrentLink}
+        >
           {label}
         </a>
       ))}

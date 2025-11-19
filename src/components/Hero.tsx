@@ -5,7 +5,8 @@ import { useRef } from "react";
 
 const Hero = () => {
   // ref untuk tombol
-  const scrollBtnRef = useRef(null);
+  const scrollBtnRef = useRef<HTMLDivElement>(null);
+
 
   useGSAP(() => {
     if (scrollBtnRef.current) {
@@ -47,7 +48,7 @@ const Hero = () => {
           </h2>
 
           <div className="flex items-center gap-3">
-            <ButtonPrimary label="Download CV" icon="download" />
+            <ButtonPrimary label="Download CV" icon="download" href="/cv.pdf"/>
 
             {/* Tambahin ref di sini */}
             <div ref={scrollBtnRef}>
