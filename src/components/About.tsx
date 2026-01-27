@@ -21,7 +21,7 @@ const About = () => {
         <div className="container">
             <div className="bg-zinc-800/50 p-7 rounded-2xl md:p-12 reveal-up">
                 <p className="text-zinc-300 mb-4 md:mb-8 md:text-xl md:max-w-[60ch]">
-                    Welcome! I&apos;m Ahlul, tech enthusiast specializing in computer vision and AI, with a strong ability to build                     scalable and efficient solutions. Skilled in Python, machine learning, Google Cloud engineering, and experienced in React.js, Laravel, Kotlin, and Flutter. Highly motivated to advance innovation in the field of artificial intelligence.
+                    Welcome! I&apos;m Ahlul, Informatics fresh graduate with a strong foundation in data analysis. Proficient in SQL and Python for data cleaning, analysis, and reporting. Experienced in building dashboards and performing analytical insights to support data-driven decision-making. Strong communication skills with the ability to translate technical findings into clear and actionable insights.
 
                 </p>
                 <div className="flex flex-wrap items-center gap-4 md:gap-7">

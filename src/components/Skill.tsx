@@ -46,6 +46,21 @@ const skillItem = [
     label: 'Java',
     desc: 'Programming Language'
   },
+  {
+    imgSrc: '/images/r.svg',
+    label: 'R',
+    desc: 'Programming Language'
+  },
+  {
+    imgSrc: '/images/sql.svg',
+    label: 'SQL',
+    desc: 'Database Management'
+  },
+  {
+    imgSrc: '/images/power-bi.svg',
+    label: 'Power BI',
+    desc: 'Data Visualization Tool'
+  },
   
 ];
 
