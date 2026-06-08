@@ -61,6 +61,11 @@ const skillItem = [
     label: 'Power BI',
     desc: 'Data Visualization Tool'
   },
+  {
+    imgSrc: '/images/wordpress.svg',
+    label: 'WordPress',
+    desc: 'CMS Platform'
+  },
   
 ];
 

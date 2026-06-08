@@ -2,6 +2,12 @@ import ProjectCard from './ProjectCard';
 
 const works = [
   {
+    imgSrc: '/images/eac.png',
+    title: 'Eka Adhikari Cipta - Company Profile',
+    tags: ['WordPress', 'WooCommerce', 'Elementor'],
+    projectLink: 'https://www.eacfurniture.xo.je'
+  },
+  {
     imgSrc: '/images/ta.png',
     title: 'Braille Character Identification',
     tags: ['Python', 'StreamLit', 'Artificial Intelligence', 'YOLO'],

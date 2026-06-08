@@ -21,7 +21,7 @@ const About = () => {
         <div className="container">
             <div className="bg-zinc-800/50 p-7 rounded-2xl md:p-12 reveal-up">
                 <p className="text-zinc-300 mb-4 md:mb-8 md:text-xl md:max-w-[60ch]">
-                    Welcome! I&apos;m Ahlul, Informatics fresh graduate with a strong foundation in data analysis. Proficient in SQL and Python for data cleaning, analysis, and reporting. Experienced in building dashboards and performing analytical insights to support data-driven decision-making. Strong communication skills with the ability to translate technical findings into clear and actionable insights.
+                    Hello! I'm Ahlul Fadhly, an Informatics graduate who loves turning ideas and data into practical solutions. My interests span data analytics, machine learning, and web development. I enjoy exploring datasets, building intelligent systems, and developing user-friendly web applications. With hands-on experience in Python, SQL, and various development frameworks, I'm continuously learning and seeking opportunities to create meaningful technology that helps people and businesses make better decisions.
 
                 </p>
                 <div className="flex flex-wrap items-center gap-4 md:gap-7">
