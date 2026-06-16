@@ -2,6 +2,12 @@ import ProjectCard from './ProjectCard';
 
 const works = [
   {
+    imgSrc: '/images/weather.png',
+    title: 'Weather Aplikasi',
+    tags: ['Angular'],
+    projectLink: 'https://weather-angular-chi.vercel.app/'
+  },
+  {
     imgSrc: '/images/eac.png',
     title: 'Eka Adhikari Cipta - Company Profile',
     tags: ['WordPress', 'WooCommerce', 'Elementor'],

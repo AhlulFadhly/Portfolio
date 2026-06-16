@@ -6,11 +6,6 @@ const skillItem = [
     desc: 'Framework'
   },
   {
-    imgSrc: '/images/laravel.svg',
-    label: 'Laravel',
-    desc: 'Framework'
-  },
-  {
     imgSrc: '/images/flutter.svg',
     label: 'Flutter',
     desc: 'Framework'
@@ -65,6 +60,11 @@ const skillItem = [
     imgSrc: '/images/wordpress.svg',
     label: 'WordPress',
     desc: 'CMS Platform'
+  },
+  {
+    imgSrc: '/images/angular.svg',
+    label: 'Angular',
+    desc: 'Framework'
   },
   
 ];
