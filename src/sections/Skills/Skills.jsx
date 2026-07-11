@@ -4,12 +4,10 @@ import Container from "../../components/Container/Container";
 import SectionHeader from "../../components/SectionHeader/SectionHeader";
 
 import { skills } from "../../data/skills";
-import useReveal from "../../hook/useReveal";
 
 function Skills() {
-   const revealRef = useReveal();
   return (
-    <section className="skills reveal" id="skills" ref={revealRef}>
+    <section className="skills" id="skills">
       <Container>
         <SectionHeader
           align="center"

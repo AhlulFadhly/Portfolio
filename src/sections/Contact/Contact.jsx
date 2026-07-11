@@ -5,12 +5,9 @@ import SectionHeader from "../../components/SectionHeader/SectionHeader";
 
 import { socials } from "../../data/socials";
 
-import useReveal from "../../hook/useReveal";
-
 function Contact() {
-   const revealRef = useReveal();
   return (
-    <section className="contact reveal" id="contact" ref={revealRef}>
+    <section className="contact" id="contact">
       <Container>
 
         <SectionHeader

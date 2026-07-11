@@ -4,12 +4,10 @@ import Container from "../../components/Container/Container";
 import SectionHeader from "../../components/SectionHeader/SectionHeader";
 import { projects } from "../../data/projects";
 
-import useReveal from "../../hook/useReveal";
 
 function Projects() {
-  const revealRef = useReveal();
   return (
-    <section className="projects reveal" id="projects" ref={revealRef}>
+    <section className="projects" id="projects">
       <Container>
         <SectionHeader
           align="center"
