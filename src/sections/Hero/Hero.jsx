@@ -8,6 +8,12 @@ import Badge from "../../components/Badge/Badge";
 import Button from "../../components/Button/Button";
 import Container from "../../components/Container/Container";
 
+import reactIcon from "../../assets/icons/react.svg";
+import angularIcon from "../../assets/icons/angular.svg";
+import javascriptIcon from "../../assets/icons/javascript.svg";
+import figmaIcon from "../../assets/icons/Figma.svg";
+
+
 function Hero() {
   return (
     <section className="hero" id="home">
@@ -132,22 +138,22 @@ function Hero() {
             <div className="stack">
 
               <span>
-                <img src="src/assets/icons/react.svg" alt="" className="icon"/>
+                <img src={reactIcon} alt="" className="icon"/>
                 React
               </span>
 
               <span>
-                <img src="src/assets/icons/angular.svg" alt="" className="icon"/>
+                <img src={angularIcon} alt="" className="icon"/>
                 Angular
               </span>
 
               <span>
-                <img src="src/assets/icons/ts.svg" alt="" className="icon"/>
-                TypeScript
+                <img src={javascriptIcon} alt="" className="icon"/>
+                JavaScript
               </span>
 
               <span>
-                <img src="src/assets/icons/Figma.svg" alt="" className="icon"/>
+                <img src={figmaIcon} alt="" className="icon"/>
                 Figma
               </span>
 
