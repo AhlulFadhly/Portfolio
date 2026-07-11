@@ -1,0 +1,180 @@
+/* ===========================
+   NAVBAR
+=========================== */
+
+.navbar {
+  position: fixed;
+  top: 20px;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.navbar__wrapper {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 14px 22px;
+
+  background: rgba(15, 15, 16, 0.75);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+}
+
+.navbar__logo img {
+  width: 50px;
+  display: block;
+  margin-left: 10px;
+}
+
+.navbar__menu {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+
+.navbar__menu a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 15px;
+  transition: 0.3s;
+}
+
+.navbar__menu a:hover {
+  color: white;
+}
+
+.navbar__action {
+  display: flex;
+}
+
+/* ===========================
+   HAMBURGER
+=========================== */
+
+.navbar__toggle {
+  display: none;
+
+  width: 42px;
+  height: 42px;
+
+  justify-content: center;
+  align-items: center;
+
+  border: none;
+  border-radius: 12px;
+
+  cursor: pointer;
+
+  color: white;
+  background: transparent;
+}
+
+/* ===========================
+   MOBILE MENU
+=========================== */
+
+.mobile-menu {
+  position: absolute;
+
+  top: calc(100% + 12px);
+  left: 50%;
+
+  transform: translateX(-50%) translateY(-15px);
+
+  width: min(92%, 420px);
+
+  padding: 24px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  background: rgba(15, 15, 16, 0.82);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  border: 1px solid rgba(255,255,255,.08);
+
+  border-radius: 24px;
+
+  opacity: 0;
+  visibility: hidden;
+
+  transition: all .35s cubic-bezier(.22,1,.36,1);
+}
+
+.mobile-menu.active {
+
+  opacity: 1;
+  visibility: visible;
+
+  transform: translateX(-50%) translateY(0);
+
+}
+
+.mobile-menu nav {
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 18px;
+
+}
+
+.mobile-menu nav a {
+
+  color: white;
+
+  text-decoration: none;
+
+  font-size: 17px;
+
+  font-weight: 500;
+
+  transition: .3s;
+
+}
+
+.mobile-menu nav a:hover {
+
+  color: #60a5fa;
+
+  transform: translateX(6px);
+
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media (max-width: 768px) {
+
+  .navbar__menu {
+    display: none;
+  }
+
+  .navbar__action {
+    display: none;
+  }
+
+  .navbar__toggle {
+    display: flex;
+  }
+
+}
+
+@media (min-width: 769px) {
+
+  .mobile-menu {
+    display: none;
+  }
+
+}

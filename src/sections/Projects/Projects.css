@@ -1,0 +1,220 @@
+.projects{
+
+    padding:140px 0;
+
+}
+
+/* GRID */
+
+.projects-grid{
+
+    margin-top:70px;
+
+    display:grid;
+
+    grid-template-columns:repeat(2,minmax(0,1fr));
+
+    gap:28px;
+
+}
+
+/* CARD */
+
+.project-card{
+
+    background:#111;
+
+    border:1px solid var(--border);
+
+    border-radius:26px;
+
+    overflow:hidden;
+
+    transition:.35s cubic-bezier(.22,1,.36,1);
+
+}
+
+.project-card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:#383838;
+
+}
+
+/* PREVIEW */
+
+.project-preview{
+
+    margin:18px;
+
+}
+
+.preview-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:14px;
+
+
+}
+
+.preview-header span{
+
+    font-size:13px;
+
+    color:#8e8e8e;
+
+}
+
+.browser-dots{
+
+    display:flex;
+
+    gap:7px;
+
+}
+
+.browser-dots span{
+
+    width:9px;
+
+    height:9px;
+
+    border-radius:50%;
+
+}
+
+.red{background:#ff605c;}
+.yellow{background:#ffbd44;}
+.green{background:#00ca4e;}
+
+/* preview body */
+
+.preview-body{
+    aspect-ratio:16/9;
+    border:1px solid #232323;
+    border-radius:18px;
+    overflow:hidden;
+
+}
+
+/* CONTENT */
+
+.project-content{
+
+    padding:0 18px 22px;
+
+}
+
+.project-content h3{
+
+    font-size:34px;
+
+    margin-bottom:14px;
+
+    line-height:1;
+
+}
+
+.project-content p{
+
+    color:var(--text-secondary);
+
+    line-height:1.8;
+
+    margin-bottom:18px;
+
+}
+
+/* TECH */
+
+.project-tech{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:10px;
+
+    margin-bottom:22px;
+
+}
+
+.project-tech span{
+
+    font-size:14px;
+
+    font-weight:600;
+
+}
+
+/* LINKS */
+
+.project-links{
+
+    display:flex;
+
+    gap:18px;
+
+}
+
+.project-links a{
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.project-links a:hover{
+
+    color:var(--primary);
+
+}
+
+/* TABLET */
+
+@media (max-width:992px){
+
+.projects-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+/* MOBILE */
+
+@media (max-width:768px){
+
+.projects{
+
+padding:100px 0;
+
+}
+
+.project-content h3{
+
+font-size:28px;
+
+}
+
+.project-preview{
+
+margin:14px;
+
+}
+
+.preview-body{
+
+gap:8px;
+
+}
+
+}

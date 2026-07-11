@@ -1,0 +1,37 @@
+:root{
+
+  /* Background */
+
+  --background:#09090B;
+  --surface:#121214;
+  --surface-hover:#18181B;
+
+  /* Text */
+
+  --text:#FAFAFA;
+  --text-secondary:#A1A1AA;
+
+  /* Border */
+
+  --border:#27272A;
+
+  /* Accent */
+
+  --primary:#4ADE80;
+  --primary-hover:#3ECF6D;
+
+  /* Layout */
+
+  --container:1200px;
+
+  /* Radius */
+
+  --radius-sm:12px;
+  --radius-md:18px;
+  --radius-lg:28px;
+
+  /* Shadow */
+
+  --shadow:0 20px 60px rgba(0,0,0,.35);
+
+}

@@ -1,0 +1,134 @@
+.resume {
+
+    max-width: 1000px;
+
+    margin: auto;
+
+    padding: 120px 20px 80px;
+
+}
+
+.resume-header {
+
+    text-align: center;
+
+    margin-bottom: 40px;
+
+}
+
+.back-btn {
+
+    display: inline-block;
+
+    margin-bottom: 24px;
+
+    color: var(--text-secondary);
+
+    text-decoration: none;
+
+    transition: .3s;
+
+}
+
+.back-btn:hover {
+
+    color: white;
+
+}
+
+.resume-header h1 {
+
+    font-family: "General Sans";
+
+    font-size: clamp(2.5rem, 5vw, 4rem);
+
+    letter-spacing: -.05em;
+
+}
+
+.resume-header p {
+
+    margin-top: 12px;
+
+    color: var(--text-secondary);
+
+}
+
+.download-btn {
+
+    display: inline-flex;
+
+    margin-top: 28px;
+
+    padding: 14px 24px;
+
+    border-radius: 999px;
+
+    background: white;
+
+    color: black;
+
+    text-decoration: none;
+
+    font-weight: 600;
+
+    transition: .3s;
+
+}
+
+.download-btn:hover {
+
+    transform: translateY(-3px);
+
+}
+
+.resume-preview {
+
+    overflow: hidden;
+
+    border-radius: 24px;
+
+    border: 1px solid rgba(255,255,255,.08);
+
+    background: #111;
+
+}
+
+.resume-preview img {
+
+    display: block;
+
+    width: 100%;
+
+    height: auto;
+
+}
+
+.resume-preview {
+
+    overflow: hidden;
+
+    border-radius: 24px;
+
+    transition: .4s;
+
+}
+
+.resume-preview img {
+
+    transition: .5s;
+
+}
+
+.resume-preview:hover {
+
+    border-color:#383838;
+
+
+}
+
+.resume-preview:hover img {
+
+    transform: scale(1.015);
+
+}

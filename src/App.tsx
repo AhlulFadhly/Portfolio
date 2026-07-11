@@ -1,53 +1,41 @@
-import { ReactLenis } from 'lenis/react';
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useGSAP } from '@gsap/react';
+import { useEffect, useState } from "react";
 
-gsap.registerPlugin(useGSAP, ScrollTrigger);
+import Navbar from "./components/Navbar/Navbar";
+import Footer from "./components/Footer/Footer";
+import Intro from "./components/Intro/Intro";
 
-import Header from "./components/Header";
-import Hero from "./components/Hero";
-import About from "./components/About";
-import Skill from "./components/Skill";
-import Work from "./components/Work";
-import Contact from "./components/Contact";
-import Footer from "./components/Footer";
+import Hero from "./sections/Hero/Hero";
+import Projects from "./sections/Projects/Projects";
+import Skills from "./sections/Skills/Skills";
+import Contact from "./sections/Contact/Contact";
 
-const App = () => {
-  useGSAP(() => {
-    const elements = gsap.utils.toArray<HTMLElement>('.reveal-up');
+function App() {
+  const [showIntro, setShowIntro] = useState(true);
 
-    elements.forEach((element) => {
-      gsap.to(element, {
-        scrollTrigger: {
-          trigger: element,
-          start: '-200 bottom',
-          end: 'bottom 80%',
-          scrub: true,
-        },
-        y: 0,
-        opacity: 1,
-        duration: 1,
-        ease: 'power2.out',
-      });
-    });
-  });
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowIntro(false);
+    }, 3000);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
-    <ReactLenis root>
-      <Header />
-      <main>
-        <Hero />
-        <About />
-        <Skill />
-        <Work />
-        <Contact />
-      </main>
-      <Footer />
-    </ReactLenis>
-  );
-};
+    <>
+      {showIntro && <Intro />}
 
+      <div className={showIntro ? "site site--hidden" : "site site--show"}>
+        <Navbar />
+        <main>
+          <Hero />
+          <Projects />
+          <Skills />
+          <Contact />
+        </main>
+        <Footer />
+      </div>
+    </>
+  );
+}
 
 export default App;
-
