@@ -6,11 +6,6 @@ function Resume() {
     <main className="resume">
 
       <div className="resume-header">
-
-        <Link className="back-btn" to="/">
-          ← Back to Portfolio
-        </Link>
-
         <h1>Resume</h1>
 
         <p>

@@ -3,9 +3,10 @@ import "./Projects.css";
 import Container from "../../components/Container/Container";
 import SectionHeader from "../../components/SectionHeader/SectionHeader";
 import { projects } from "../../data/projects";
-
+import { useNavigate } from "react-router-dom"; 
 
 function Projects() {
+  const navigate = useNavigate();
   return (
     <section className="projects" id="projects">
       <Container>
@@ -24,7 +25,12 @@ function Projects() {
 
         <div className="projects-grid">
           {projects.map((project) => (
-            <article key={project.id} className="project-card">
+            <article
+              key={project.id}
+              className="project-card"
+              onClick={() => navigate(`/detail/${project.id}`)} // Arahkan ke rute dengan ID
+              style={{ cursor: "pointer" }}
+            >
               {/* preview */}
 
               <div className="project-preview">
@@ -39,7 +45,7 @@ function Projects() {
                 </div>
 
                 <div className="preview-body">
-                  <img src={project.image} alt={project.title} />
+                  <img src={project.image[0]} alt={project.title} />
                 </div>
               </div>
 
@@ -48,18 +54,12 @@ function Projects() {
               <div className="project-content">
                 <h3>{project.title}</h3>
 
-                <p>{project.description}</p>
+                <p className="project-desc">{project.description}</p>
 
                 <div className="project-tech">
                   {project.tech.map((tech) => (
                     <span key={tech}>{tech}</span>
                   ))}
-                </div>
-
-                <div className="project-links">
-                  <a href={project.github} target="_blank">GitHub</a>
-
-                  <a href={project.demo} target="_blank">Live Demo</a>
                 </div>
               </div>
             </article>

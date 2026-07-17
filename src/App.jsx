@@ -9,16 +9,21 @@ import Projects from "./sections/Projects/Projects";
 import Skills from "./sections/Skills/Skills";
 import Contact from "./sections/Contact/Contact";
 
+let isIntroPlayed = false;
+
 function App() {
-  const [showIntro, setShowIntro] = useState(true);
+  const [showIntro, setShowIntro] = useState(!isIntroPlayed);
 
   useEffect(() => {
+    if (!showIntro) return;
+
     const timer = setTimeout(() => {
       setShowIntro(false);
+      isIntroPlayed = true;
     }, 3000);
 
     return () => clearTimeout(timer);
-  }, []);
+  }, [showIntro]);
 
   return (
     <>
