@@ -20,7 +20,7 @@ function Intro({ hide }) {
 
           <h1>AHLUL FADHLY</h1>
 
-          <p>Frontend Developer</p>
+          <p>I am Developer</p>
 
         </div>
 
