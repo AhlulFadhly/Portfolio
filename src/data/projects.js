@@ -3,10 +3,21 @@ import project2 from "../assets/images/project-2.png";
 import project3 from "../assets/images/project-3.png";
 import project4 from "../assets/images/project-4.png";
 import project5 from "../assets/images/project-5.png";
+import project6 from "../assets/images/project-6.png";
 
 export const projects = [
   {
     id: 1,
+    title: "VentureForge AI",
+    description:
+      "An AI-powered startup incubator that transforms ideas into validated business concepts. Equipped with specialized AI agents for market research, business analysis, competitor insights, financial planning, and product strategy to help entrepreneurs build data-driven startups faster.",
+    tech: ["Laravel", "OpenRouter API", "Blade", "Tailwind CSS"],
+    image: project6,
+    github: "github.com/AhlulFadhly/VentureForge-AI.git",
+    demo: "github.com/AhlulFadhly/VentureForge-AI.git",
+  },
+  {
+    id: 2,
     title: "Event Ticketing System",
     description:
       "A full-stack event management platform featuring role-based authentication, event publishing, ticket booking, and organizer dashboards built with Angular and Spring Boot.",
@@ -17,7 +28,7 @@ export const projects = [
   },
 
   {
-    id: 2,
+    id: 3,
     title: "Weather Application",
     description:
       "A responsive weather application that displays real-time forecasts using a public weather API with a clean, modern interface built in Angular.",
@@ -28,7 +39,7 @@ export const projects = [
   },
 
   {
-    id: 3,
+    id: 4,
     title: "Braille Character Recognition",
     description:
       "An AI-powered application that recognizes Braille characters from images using a YOLOv8 model, providing fast and accurate character detection.",
@@ -39,7 +50,7 @@ export const projects = [
   },
 
   {
-    id: 4,
+    id: 5,
     title: "Beyond Sign Language Translator",
     description:
       "A mobile application that translates BISINDO sign language into text using computer vision, developed as part of the Bangkit Academy capstone project.",
@@ -50,7 +61,7 @@ export const projects = [
   },
 
   {
-    id: 5,
+    id: 6,
     title: "Company Profile Website",
     description:
       "A modern company profile website redesigned with WordPress, Elementor, and WooCommerce to improve visual presentation, usability, and content management.",
