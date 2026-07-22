@@ -13,14 +13,27 @@ import project6 from "../assets/images/project-6.png";
 import project6a from "../assets/images/project-6a.png";
 import project6b from "../assets/images/project-6b.png";
 import project6c from "../assets/images/project-6c.png";
+import project7 from "../assets/images/project-7.png";
+import project7a from "../assets/images/project-7a.png";
+import project7b from "../assets/images/project-7b.png";
 
 export const projects = [
+  {
+    id: 1,
+    title: "AI Smart Travel Planner",
+    description:
+      "Developed an AI-powered Smart Travel Planner using LangGraph, implementing LLM tool-calling workflows, state management, and memory checkpointing to generate personalized travel itineraries by integrating OpenTripMap and Open-Meteo APIs for tourist attractions, hotel recommendations, and weather forecasts.",
+    tech: ["Laravel", "OpenRouter", "LangGraph", "LLM"],
+    image: [project7, project7a, project7b],
+    github: "https://github.com/AhlulFadhly/AI-Smart-Travel-Planner-LangGraph",
+    demo: "https://drive.google.com/file/d/1wFYRSQbueFdWjH0Cma8yOrpi91CFby7a/view?usp=sharing",
+  },
   {
     id: 1,
     title: "VentureForge AI",
     description:
       "An AI-powered startup incubator that transforms ideas into validated business concepts. Equipped with specialized AI agents for market research, business analysis, competitor insights, financial planning, and product strategy to help entrepreneurs build data-driven startups faster.",
-    tech: ["Laravel", "OpenRouter API", "Blade", "Tailwind CSS"],
+    tech: ["Laravel", "OpenRouter", "Blade", "Tailwind CSS"],
     image: [project6, project6a, project6b, project6c],
     github: "https://github.com/AhlulFadhly/VentureForge-AI",
     demo: "https://github.com/AhlulFadhly/VentureForge-AI",

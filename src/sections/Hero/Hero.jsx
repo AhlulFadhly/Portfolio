@@ -1,168 +1,101 @@
 import "./Hero.css";
+import { useEffect, useState } from "react";
 
-import {
-  FaArrowRight,
-} from "react-icons/fa6";
+import { FaArrowRight } from "react-icons/fa6";
 
 import Badge from "../../components/Badge/Badge";
 import Button from "../../components/Button/Button";
 import Container from "../../components/Container/Container";
-
-import reactIcon from "../../assets/icons/react.svg";
-import angularIcon from "../../assets/icons/angular.svg";
-import javascriptIcon from "../../assets/icons/javascript.svg";
-import figmaIcon from "../../assets/icons/Figma.svg";
-
+import hero from "../../assets/images/hero.png";
 
 function Hero() {
+  const words = [
+  "Frontend",
+  "Backend",
+  "AI",
+  "Software",
+  "Products",
+];
+
+  const [text, setText] = useState("");
+  const [wordIndex, setWordIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  useEffect(() => {
+    const currentWord = words[wordIndex];
+
+    const timeout = setTimeout(
+      () => {
+        if (!isDeleting) {
+          setText(currentWord.substring(0, text.length + 1));
+
+          if (text === currentWord) {
+            setTimeout(() => setIsDeleting(true), 1000);
+          }
+        } else {
+          setText(currentWord.substring(0, text.length - 1));
+
+          if (text === "") {
+            setIsDeleting(false);
+            setWordIndex((prev) => (prev + 1) % words.length);
+          }
+        }
+      },
+      isDeleting ? 60 : 120,
+    );
+
+    return () => clearTimeout(timeout);
+  }, [text, isDeleting, wordIndex]);
   return (
     <section className="hero" id="home">
       <Container>
-
         <div className="hero__wrapper">
-
           {/* LEFT */}
 
           <div className="hero__content">
-
-            <Badge>
-              Available for frontend opportunities
-            </Badge>
+            <Badge>Available for opportunities</Badge>
 
             <h1>
-              Crafting Modern
+              Crafting 
               <br />
-              Frontend
+              Modern
+              <br />
+              <span className="hero__typing">{text}</span>
               <br />
               Experiences.
             </h1>
 
             <p>
-              Frontend Developer passionate about creating fast,
-              responsive, accessible, and beautiful web
-              applications with clean architecture and
-              delightful user experiences.
+              Software Engineer passionate about developing scalable systems,
+              AI-powered solutions, and modern applications that deliver
+              meaningful user experiences.
             </p>
 
             <div className="hero__buttons">
-
               <a href="#projects">
-              <Button>
-                View Projects
-              </Button>
+                <Button>View Projects</Button>
               </a>
 
               <a href="#contact">
-              <Button variant="secondary">
-                Contact Me
-              </Button>
+                <Button variant="secondary">Contact Me</Button>
               </a>
-
-
             </div>
 
             <div className="hero__features">
-
               <span>Accessible UI</span>
 
               <span>Responsive Systems</span>
 
               <span>Clean Architecture</span>
-
             </div>
-
           </div>
 
           {/* RIGHT */}
 
-          <div className="hero-ui">
-
-            <div className="hero-ui__header">
-
-              <div className="browser">
-
-                <span className="red"></span>
-
-                <span className="yellow"></span>
-
-                <span className="green"></span>
-
-              </div>
-
-              <small>ahlul.dev/ui-system</small>
-
-            </div>
-
-            <div className="preview">
-
-              <div className="preview-row">
-
-                <div className="card lg"></div>
-
-                <div className="card lg active-green"></div>
-
-              </div>
-
-              <div className="preview-row">
-
-                <div className="card sm"></div>
-
-                <div className="card xl active-blue"></div>
-
-                <div className="card sm"></div>
-
-              </div>
-
-              <div className="card footer"></div>
-
-            </div>
-
-            <div className="code">
-
-              <p>
-                const craft = build({"{"})
-              </p>
-
-              <span className="cyan">
-                accessible: true,
-              </span>
-
-              <span className="kuning">
-                responsive: true,
-              </span>
-
-              <p>{"});"}</p>
-
-            </div>
-
-            <div className="stack">
-
-              <span>
-                <img src={reactIcon} alt="" className="icon"/>
-                React
-              </span>
-
-              <span>
-                <img src={angularIcon} alt="" className="icon"/>
-                Angular
-              </span>
-
-              <span>
-                <img src={javascriptIcon} alt="" className="icon"/>
-                JavaScript
-              </span>
-
-              <span>
-                <img src={figmaIcon} alt="" className="icon"/>
-                Figma
-              </span>
-
-            </div>
-
+          <div className="hero-img">
+            <img src={hero} alt="" />
           </div>
-
         </div>
-
       </Container>
     </section>
   );
